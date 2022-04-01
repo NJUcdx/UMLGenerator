@@ -17,18 +17,16 @@ public class AipSpeechController {
     private AipSpeechService aipSpeechService;
 
     /**
-     * 脚本文件上传
+     * 语音文件上传
      * @param speechFile
      * @return
      */
     @RequestMapping(value = "/saveSpeechFile", method = RequestMethod.POST)
-    public String sendSpeechFile(@RequestParam("file") MultipartFile speechFile) throws IOException {
+    public String saveSpeechFile(@RequestParam("file") MultipartFile speechFile) throws IOException {
         if (null == speechFile) {
             return "失败！";
         }
         aipSpeechService.savePcmFile(speechFile);
         return aipSpeechService.getOriginSpeechRecognitionResults();
     }
-
-
 }

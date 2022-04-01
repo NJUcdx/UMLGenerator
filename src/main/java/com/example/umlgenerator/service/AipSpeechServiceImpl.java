@@ -15,10 +15,12 @@ public class AipSpeechServiceImpl implements AipSpeechService {
 
     @Autowired
     private AipSpeech aipSpeech;
+    @Autowired
+    private AipSpeechClientConfig aipSpeechClientConfig;
 
     public String getOriginSpeechRecognitionResults() {
         // 调用接口
-        JSONObject res = aipSpeech.asr(AipSpeechClientConfig.getPath(), "pcm", 16000, null);
+        JSONObject res = aipSpeech.asr(aipSpeechClientConfig.getPath(), "pcm", 16000, null);
         Map<String, Object> stringObjectMap = res.toMap();
         if (stringObjectMap.get("result") != null) {
             String tmp = stringObjectMap.get("result").toString();
@@ -35,7 +37,7 @@ public class AipSpeechServiceImpl implements AipSpeechService {
         // 读取到的数据长度
         int len;
         // 文件实现上传
-        os = new FileOutputStream(AipSpeechClientConfig.getPath());
+        os = new FileOutputStream(aipSpeechClientConfig.getPath());
         // 开始读取
         while ((len = inputStream.read(bs)) != -1) {
             os.write(bs, 0, len);

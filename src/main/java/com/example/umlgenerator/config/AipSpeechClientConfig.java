@@ -1,6 +1,7 @@
 package com.example.umlgenerator.config;
 
 import com.baidu.aip.speech.AipSpeech;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,10 +9,17 @@ import org.springframework.context.annotation.Configuration;
 public class AipSpeechClientConfig {
 
     //设置APPID/AK/SK
-    private static final String APP_ID = "25888552";
-    private static final String API_KEY = "4TqRGPeVEfXRuIksgAzRDkFZ";
-    private static final String SECRET_KEY = "TzqFG6Oe2C30UbwggDBe8ouYADzlL87s";
-    private static final String Path = "src/main/resources/result.pcm";
+    @Value("${baidu.APP_ID}")
+    private String APP_ID;
+
+    @Value("${baidu.API_KEY}")
+    private String API_KEY;
+
+    @Value("${baidu.SECRET_KEY}")
+    private String SECRET_KEY;
+
+    @Value("${pcm.path}")
+    private String Path;
 
 
     @Bean
@@ -23,7 +31,7 @@ public class AipSpeechClientConfig {
         return client;
     }
 
-    public static String getPath() {
+    public String getPath() {
         return Path;
     }
 }
