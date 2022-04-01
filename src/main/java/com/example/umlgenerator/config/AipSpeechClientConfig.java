@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration;
 public class AipSpeechClientConfig {
 
     //设置APPID/AK/SK
-    private static final String APP_ID = "";
-    private static final String API_KEY = "";
-    private static final String SECRET_KEY = "";
+    private static final String APP_ID = "25888552";
+    private static final String API_KEY = "4TqRGPeVEfXRuIksgAzRDkFZ";
+    private static final String SECRET_KEY = "TzqFG6Oe2C30UbwggDBe8ouYADzlL87s";
     private static final String Path = "src/main/resources/result.pcm";
 
 
