@@ -1,0 +1,13 @@
+spring:
+application:
+name: backend
+profiles.active: aeolian
+## MULTIPART (MultipartProperties)
+# 开启 multipart 上传功能
+servlet.multipart.enabled: true
+# 文件写入磁盘的阈值
+servlet.multipart.file-size-threshold: 1KB
+# 最大文件大小
+servlet.multipart.max-file-size: 200MB
+# 最大请求大小
+servlet.multipart.max-request-size: 215MB

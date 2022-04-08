@@ -1,7 +1,8 @@
-package com.example.umlgenerator.service;
+package com.example.umlgenerator.serviceImpl;
 
 import com.baidu.aip.speech.AipSpeech;
 import com.example.umlgenerator.config.AipSpeechClientConfig;
+import com.example.umlgenerator.service.AipSpeechService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

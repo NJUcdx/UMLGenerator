@@ -21,7 +21,7 @@ public class AipSpeechController {
      * @param speechFile
      * @return
      */
-    @RequestMapping(value = "/saveSpeechFile", method = RequestMethod.POST)
+    @RequestMapping(value = "/saveSpeechFile", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
     public String saveSpeechFile(@RequestParam("file") MultipartFile speechFile) throws IOException {
         if (null == speechFile) {
             return "失败！";
