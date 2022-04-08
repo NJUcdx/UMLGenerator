@@ -35,7 +35,7 @@ public class Controller {
         String input =  aipSpeechService.getOriginSpeechRecognitionResults();
         String[] sentence = tokenizeService.tokenize(input);
         Result result = graphGenerateService.generate(sentence);
-        return Response.success("success", result);
+        return Response.success(input, result);
     }
 
     @RequestMapping(value = "/recognize", method = RequestMethod.POST)
